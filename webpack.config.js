@@ -1,23 +1,7 @@
-const webpack = require('webpack')
+const merge = require('webpack-merge')
+const base = require('./config/webpack/base.config')
+const dev = require('./config/webpack/dev.config')
+const prod = require('./config/webpack/prod.config')
 
-module.exports = {
-  devtool: 'source-map',
-  entry: [
-    './src/entry',
-    'webpack-hot-middleware/client'
-  ],
-  output: {
-    filename: 'bundle.js',
-    publicPath: '/',
-    path: __dirname + '/public'
-  },
-  plugins: [
-    new webpack.optimize.OccurenceOrderPlugin,
-    new webpack.HotModuleReplacementPlugin
-  ],
-  module: {
-    loaders: [
-      { test: /\.js$/, loader: 'babel' }
-    ]
-  }
-}
+const extra = process.env.NODE_ENV === 'production' ? prod : dev
+module.exports = merge(base, extra)
