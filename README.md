@@ -26,7 +26,7 @@ rendering.
 The Webpack configuration is set up to build both development and production versions of the code.
 
 Further configuration should be added to the correct file in webpack.config file in the 
-`config/webpack folder` according to whether the new configuration is required in development, 
+`config/webpack` folder according to whether the new configuration is required in development, 
 production, or both.
 
 Building production code: `npm run compile`.
