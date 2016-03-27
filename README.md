@@ -48,8 +48,10 @@ any changes to the nested components.
 
 ## Server side hot loading
 
-All of the server side code reloads when any changes are made, without restarting the server (hence 
-state is preserved (including the currently compiled modules that are held in memory).
+All of the server side code reloads when any changes are made, without restarting the server, 
+hence the state of the previously compiled modules, held in memory, is retained. This can easily 
+be extended to any components with state that exist on the server (if any do - a stateless server side
+may be best).
 
 
 # Deploying to Heroku
